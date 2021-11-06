@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MovieItem from '../MovieItem/MovieItem';
 import './MovieList.css'
-import { Grid } from '@mui/material';
+import { ImageList } from '@mui/material';
 
 
 function MovieList() {
@@ -18,12 +18,14 @@ function MovieList() {
         <main>
             <h1>MovieList</h1>
             <section className="movies">
+                <ImageList>
                 {movies.map(movie => {
                     return (
                         <MovieItem movie={movie}
                         key={movie.id}/>
                     );
-                })}
+                })} 
+                </ImageList>
             </section>
         </main>
 

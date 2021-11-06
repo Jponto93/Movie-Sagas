@@ -26,7 +26,7 @@ function MovieItem({ movie }) {
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="350"
+                    height="500"
                     image={movie.poster}
                     alt="green iguana"
                 />
