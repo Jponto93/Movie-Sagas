@@ -16,6 +16,16 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
 }
 
+// holds our selected movie for the details view
+const selectedMovie = (state = {}, action) => {
+    switch(action.type){
+        case 'SET_SELECTED_MOVIE':
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 function* fetchAllMovies() {
     // get all movies from the DB
     try {
@@ -57,6 +67,7 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        selectedMovie
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
