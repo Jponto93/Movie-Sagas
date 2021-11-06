@@ -3,19 +3,21 @@ import './App.css';
 import MovieList from '../MovieList/MovieList'
 import MovieDetail from '../MovieDetail/MovieDetail';
 import MovieForm from '../MovieForm/MovieForm';
+import Header from '../Header/Header';
 
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
+      {/* <h1 className="mainHeader">The Movies Saga!</h1> */}
       <Router>
-        <nav>
+        {/* <nav>
           <Link to="/">MOVIE LIST</Link>
         </nav>
 
         <nav>
           <Link to="/add">ADD MOVIE</Link>
-        </nav>
+        </nav> */}
+        <Header />
 
 
         <Route path="/" exact>
@@ -30,7 +32,7 @@ function App() {
           <MovieForm />
         </Route>
       </Router>
-      
+
     </div>
   );
 }

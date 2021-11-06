@@ -1,4 +1,9 @@
 .movies {
     display : flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.listMain {
+    background-color: #8F6593;
 }

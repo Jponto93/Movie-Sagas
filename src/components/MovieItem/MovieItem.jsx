@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import './MovieItem.css';
 
 function MovieItem({ movie }) {
 
@@ -19,8 +20,10 @@ function MovieItem({ movie }) {
     } // end handleSelectedMovie
 
     return (
-        
-        <Card sx={{ maxWidth: 345 }}
+        // <div className="mainCard">
+        <Card
+        className="mainCard"
+        sx={{ maxWidth: 345 }}
         onClick={() => handleSelectedMovie(movie)}
         key={movie.id}>
             <CardActionArea>
@@ -35,6 +38,7 @@ function MovieItem({ movie }) {
                 </CardContent>
             </CardActionArea>
         </Card>
+        // </div>
     )
 
 
