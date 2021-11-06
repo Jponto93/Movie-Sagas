@@ -30,6 +30,7 @@ function App() {
           <MovieForm />
         </Route>
       </Router>
+      
     </div>
   );
 }

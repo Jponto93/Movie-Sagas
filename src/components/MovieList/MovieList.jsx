@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MovieItem from '../MovieItem/MovieItem';
 import './MovieList.css'
+import { Grid } from '@mui/material';
+
 
 function MovieList() {
 
