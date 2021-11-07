@@ -18,13 +18,15 @@ function MovieList() {
         <main className="">
             <h1>Movie List</h1>
             <Paper elevation={24}>
-                <section className="movies listMain">
-                    <ImageList cols={3}
+                <section className="listMain">
+                    <ImageList
                         gap={16}
                     >
                         {movies.map(movie => {
                             return (
-                                <MovieItem movie={movie}
+                                <MovieItem
+                                    className="movies"
+                                    movie={movie}
                                     key={movie.id} />
                             );
                         })}
@@ -32,7 +34,6 @@ function MovieList() {
                 </section>
             </Paper>
         </main>
-
     );
 }
 

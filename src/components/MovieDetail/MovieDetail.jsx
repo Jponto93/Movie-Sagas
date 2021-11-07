@@ -12,9 +12,9 @@ function MovieDetail() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_DETAILS', payload: selectedMovie.id})
+        dispatch({ type: 'FETCH_DETAILS', payload: selectedMovie.id })
     }, [])
-    
+
     console.log('this is details at index 0', details[0]);
 
     return (
@@ -28,16 +28,16 @@ function MovieDetail() {
                         <p>{details[0].description}</p>
                         <h2>Genres</h2>
                         <List>
-                        {details.map((genre) => {
-                            return (
-                                <ListItemText 
-                                key={genre.id}>{genre.name}</ListItemText>
-                            )
-                        })}
+                            {details.map((genre) => {
+                                return (
+                                    <ListItemText
+                                        key={genre.id}>{genre.name}</ListItemText>
+                                )
+                            })}
                         </List>
-                        <Button 
-                        variant="contained"
-                        onClick={() => history.push('/')}>BACK TO LIST</Button>
+                        <Button
+                            variant="contained"
+                            onClick={() => history.push('/')}>BACK TO LIST</Button>
                     </>
                 ) : (
                     <>

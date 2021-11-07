@@ -20,28 +20,25 @@ function MovieItem({ movie }) {
     } // end handleSelectedMovie
 
     return (
-        // <div className="mainCard">
         <Card
-        className="mainCard"
-        sx={{ maxWidth: 345 }}
-        onClick={() => handleSelectedMovie(movie)}
-        key={movie.id}>
+            className="mainCard"
+            sx={{ maxWidth: 345 }}
+            onClick={() => handleSelectedMovie(movie)}
+            key={movie.id}>
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="500"
+                    height="450"
                     image={movie.poster}
                     alt="green iguana"
                 />
                 <CardContent>
-                <Typography>{movie.title}</Typography>
+                    <Typography
+                        variant="caption">{movie.title}</Typography>
                 </CardContent>
             </CardActionArea>
         </Card>
-        // </div>
     )
-
-
 } // end MovieItem
 
 export default MovieItem;

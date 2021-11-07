@@ -34,9 +34,9 @@ function MovieForm() {
         dispatch({ type: 'ADD_MOVIE', payload: newMovie })
     }
     return (
+
         <Container className="mainFormContainer">
             <form onSubmit={addNewMovie}>
-                {/* <Container className="mainFormContainer"> */}
                 <Paper elevation={24}>
                     <div className="mainIn">
                         <TextField
@@ -49,7 +49,6 @@ function MovieForm() {
                             onChange={() => handleNameChange(event, 'title')}
                         />
                     </div>
-
                     <div className="mainIn">
                         <TextField
                             multiline
@@ -61,7 +60,6 @@ function MovieForm() {
                             onChange={() => handleNameChange(event, 'poster')}
                         />
                     </div>
-
                     <div className="mainIn">
                         <TextField
                             multiline
@@ -73,10 +71,10 @@ function MovieForm() {
                             onChange={() => handleNameChange(event, 'description')}
                         />
                     </div >
-
                     <div className="mainIn">
                         <InputLabel>Genre</InputLabel>
                         <Select
+                            required
                             defaultValue={1}
                             label="Genre"
                             value={newMovie.genre}
@@ -97,21 +95,19 @@ function MovieForm() {
                             <MenuItem value={13}>Superhero</MenuItem>
                         </Select>
                     </div>
-
                     <div className="formBtnContainer">
                         <Button
-                        variant="contained"
+                            variant="contained"
                             color="warning"
                             className="formBtn"
                             onClick={() => history.push('/')}>CANCEL</Button>
-                        <Button 
-                        variant="contained"
+                        <Button
+                            variant="contained"
                             color="success"
                             className="formBtn"
                             type="submit">SUBMIT</Button>
                     </div>
                 </Paper>
-                {/* </Container> */}
             </form>
         </Container>
     )

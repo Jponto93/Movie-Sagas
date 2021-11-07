@@ -18,7 +18,7 @@ function* rootSaga() {
     yield takeEvery('ADD_MOVIE', addMovie)
 }
 
-function* addMovie (action) {
+function* addMovie(action) {
     try {
         yield axios.post('/api/movie', action.payload);
         yield put({ type: 'FETCH_MOVIES' })
@@ -27,8 +27,8 @@ function* addMovie (action) {
     }
 }
 
-function* fetchAllDetails (action) {
-   const id = action.payload
+function* fetchAllDetails(action) {
+    const id = action.payload
     // get all details from selected movie
     try {
         const details = yield axios.get(`api/movie/${id}`)
@@ -43,16 +43,16 @@ function* fetchAllDetails (action) {
 
 // holds all details
 const details = (state = {}, action) => {
-    switch(action.type){
+    switch (action.type) {
         case 'SET_ALL_DETAILS':
             return action.payload
-        default: 
+        default:
             return state;
     }
 }
 // holds our selected movie for the details view
 const selectedMovie = (state = {}, action) => {
-    switch(action.type){
+    switch (action.type) {
         case 'SET_SELECTED_MOVIE':
             return action.payload;
         default:
@@ -70,7 +70,7 @@ function* fetchAllMovies() {
     } catch (err) {
         console.log('get all error', err);
     }
-        
+
 }
 
 // Create sagaMiddleware
@@ -114,7 +114,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={storeInstance}>
-        <App />
+            <App />
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')
