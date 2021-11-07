@@ -16,7 +16,7 @@ function MovieList() {
 
     return (
         <main className="">
-            <h1>MovieList</h1>
+            <h1>Movie List</h1>
             <Paper elevation={24}>
                 <section className="movies listMain">
                     <ImageList cols={3}
