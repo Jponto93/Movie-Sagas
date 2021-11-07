@@ -17,7 +17,7 @@ function MovieDetail() {
     console.log('this is details at index 0', details[0]);
 
     return (
-        <section>
+        <section className="mainDetail">
             <h1>Selected Movie</h1>
             {
                 details[0] ? (
