@@ -1,3 +1,7 @@
 .mainDetail {
     text-align: center;
 }
+
+li, ul {
+    list-style: none;
+}

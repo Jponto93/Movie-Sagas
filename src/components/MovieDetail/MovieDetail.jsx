@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useHistory } from "react-router";
+import { Container, List, ListItem, ListItemText, Button } from "@material-ui/core";
 
 function MovieDetail() {
 
@@ -17,7 +18,7 @@ function MovieDetail() {
     console.log('this is details at index 0', details[0]);
 
     return (
-        <section className="mainDetail">
+        <Container className="mainDetail">
             <h1>Selected Movie</h1>
             {
                 details[0] ? (
@@ -26,23 +27,26 @@ function MovieDetail() {
                         <img src={details[0].poster} alt="" />
                         <p>{details[0].description}</p>
                         <h2>Genres</h2>
-                        <ul>
+                        <List>
                         {details.map((genre) => {
                             return (
-                                <li key={genre.id}>{genre.name}</li>
+                                <ListItemText 
+                                key={genre.id}>{genre.name}</ListItemText>
                             )
                         })}
-                        </ul>
-                        <button onClick={() => history.push('/')}>BACK TO LIST</button>
+                        </List>
+                        <Button 
+                        variant="contained"
+                        onClick={() => history.push('/')}>BACK TO LIST</Button>
                     </>
                 ) : (
                     <>
                         <p>No movie selected.</p>
-                        <button onClick={() => history.push('/')}>BACK TO LIST</button>
+                        <Button onClick={() => history.push('/')}>BACK TO LIST</Button>
                     </>
                 )
             }
-        </section>
+        </Container>
     )
 } // end MovieDetail
 
