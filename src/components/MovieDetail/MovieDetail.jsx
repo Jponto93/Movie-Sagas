@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useHistory } from "react-router";
+import { Container, List, ListItem, ListItemText, Button } from "@material-ui/core";
 
 function MovieDetail() {
 
@@ -11,13 +12,13 @@ function MovieDetail() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({ type: 'FETCH_DETAILS', payload: selectedMovie.id})
+        dispatch({ type: 'FETCH_DETAILS', payload: selectedMovie.id })
     }, [])
-    
+
     console.log('this is details at index 0', details[0]);
 
     return (
-        <section>
+        <Container className="mainDetail">
             <h1>Selected Movie</h1>
             {
                 details[0] ? (
@@ -26,23 +27,26 @@ function MovieDetail() {
                         <img src={details[0].poster} alt="" />
                         <p>{details[0].description}</p>
                         <h2>Genres</h2>
-                        <ul>
-                        {details.map((genre) => {
-                            return (
-                                <li key={genre.id}>{genre.name}</li>
-                            )
-                        })}
-                        </ul>
-                        <button onClick={() => history.push('/')}>BACK TO LIST</button>
+                        <List>
+                            {details.map((genre) => {
+                                return (
+                                    <ListItemText
+                                        key={genre.id}>{genre.name}</ListItemText>
+                                )
+                            })}
+                        </List>
+                        <Button
+                            variant="contained"
+                            onClick={() => history.push('/')}>BACK TO LIST</Button>
                     </>
                 ) : (
                     <>
                         <p>No movie selected.</p>
-                        <button onClick={() => history.push('/')}>BACK TO LIST</button>
+                        <Button onClick={() => history.push('/')}>BACK TO LIST</Button>
                     </>
                 )
             }
-        </section>
+        </Container>
     )
 } // end MovieDetail
 

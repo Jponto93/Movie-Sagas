@@ -1,4 +1,11 @@
-.movies {
+
+.listMain {
     display : flex;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px;
+    background-color: #8F6593;
+
+    margin-bottom: 30px;
+
 }
